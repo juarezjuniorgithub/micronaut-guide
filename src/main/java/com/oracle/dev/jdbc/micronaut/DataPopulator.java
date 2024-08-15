@@ -28,8 +28,7 @@ import com.oracle.dev.jdbc.micronaut.repository.ThingRepository;
 public class DataPopulator {
 
   private final ThingRepository thingRepository;
-  private final String QUERY = "SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = 'ADMIN' AND TABLE_NAME = 'THING'";
-  // private final String QUERY_TWO = "SELECT * FROM THING";
+  private final String QUERY = "SELECT TABLE_NAME FROM ALL_TABLES WHERE OWNER = 'ADMIN' AND TABLE_NAME = 'THING'";  
   private DataSource dataSource;
   private boolean baselineOnMigrate;
   private String baselineVersion;
