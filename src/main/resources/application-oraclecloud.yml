@@ -1,9 +1,0 @@
-datasources:
-  default:
-    ocid: <YOUR_DB_OCID>
-    walletPassword: <YOUR_WALLET_PASSWORD>
-    username: <YOUR_DB_ADMIN_USERNAME>
-    password: <YOUR_WALLET_PASSWORD>
-oci:
-  config:
-    profile: DEFAULT 
