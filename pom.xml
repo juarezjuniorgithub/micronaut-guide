@@ -22,7 +22,7 @@
     <micronaut.runtime>netty</micronaut.runtime>
     <micronaut.aot.packageName>com.oracle.dev.jdbc.micronaut.aot.generated</micronaut.aot.packageName>
     <exec.mainClass>com.oracle.dev.jdbc.micronaut.Application</exec.mainClass>
-    <micronaut.sourcegen.version>1.0.0-M15</micronaut.sourcegen.version>
+    <micronaut.sourcegen.version>1.2.1</micronaut.sourcegen.version>
     <micronaut-maven-plugin.version>4.6.1</micronaut-maven-plugin.version>
   </properties>
   <dependencies>
