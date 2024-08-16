@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
-  <artifactId>micronautguide</artifactId>
+  <artifactId>micronaut-guide</artifactId>
   <version>0.1</version>
   <packaging>${packaging}</packaging>
   <parent>
@@ -189,7 +189,7 @@
           </annotationProcessorPaths>
           <compilerArgs>
             <arg>-Amicronaut.processing.group=com.oracle.dev.jdbc.micronaut</arg>
-            <arg>-Amicronaut.processing.module=micronautguide</arg>
+            <arg>-Amicronaut.processing.module=micronaut-guide</arg>
           </compilerArgs>
         </configuration>
       </plugin>
