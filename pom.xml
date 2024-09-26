@@ -135,6 +135,10 @@
         <artifactId>native-maven-plugin</artifactId>
         <configuration>
           <quickBuild>true</quickBuild>
+          <buildArgs>
+            <buildArg>--initialize-at-build-time=io.micronaut.flyway.StaticResourceProvider</buildArg>
+            <buildArg>--initialize-at-build-time=io.micronaut.flyway.StaticResourceProvider$StaticLoadableResource</buildArg>
+          </buildArgs>
         </configuration>
       </plugin>
       <plugin>
