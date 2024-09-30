@@ -14,8 +14,8 @@
   </parent>
   <properties>
     <packaging>jar</packaging>
-    <jdk.version>22</jdk.version>
-    <release.version>22</release.version>
+    <jdk.version>17</jdk.version>
+    <release.version>17</release.version>
     <micronaut.version>4.5.1</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <micronaut.aot.enabled>false</micronaut.aot.enabled>
@@ -135,9 +135,56 @@
         <artifactId>native-maven-plugin</artifactId>
         <configuration>
           <quickBuild>true</quickBuild>
+          <!-- https://www.graalvm.org/latest/reference-manual/native-image/guides/specify-class-initialization/ -->
           <buildArgs>
             <buildArg>--initialize-at-build-time=io.micronaut.flyway.StaticResourceProvider</buildArg>
             <buildArg>--initialize-at-build-time=io.micronaut.flyway.StaticResourceProvider$StaticLoadableResource</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeDirectByteBuf</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.ResourceLeakDetector</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.internal.logging.LocationAwareSlf4JLogger</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.ResourceLeakDetector$Level</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.buffer.AbstractReferenceCountedByteBuf$1</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.spi.AppenderAttachableImpl</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.util.COWArrayList</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.ConsoleAppender</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.spi.FilterAttachableImpl</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.joran.spi.ConsoleTarget</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.joran.spi.ConsoleTarget$2</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.joran.spi.ConsoleTarget$1</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.classic.encoder.PatternLayoutEncoder</buildArg>      
+            <buildArg>--initialize-at-build-time=ch.qos.logback.classic.PatternLayout</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.classic.Logger</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.internal.CleanerJava9</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.util.Duration</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.subst.Token</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.util.StatusPrinter</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.pattern.parser.Parser</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.status.InfoStatus</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.classic.PatternLayout</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.util.Loader</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.model.processor.ImplicitModelHandler$1</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.internal.StringUtil</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.internal.PlatformDependent0</buildArg>
+            <buildArg>--initialize-at-build-time=org.slf4j.LoggerFactory</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.CoreConstants</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.ResourceLeakDetectorFactory</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.internal.PlatformDependent</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.subst.Parser$1</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.classic.model.processor.LogbackClassicDefaultNestedComponentRules</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.internal.logging.Slf4JLoggerFactory$NopInstanceHolder</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.classic.Level</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.CharsetUtil</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.internal.SystemPropertyUtil</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.status.StatusBase</buildArg>
+            <buildArg>--initialize-at-build-time=org.slf4j.helpers.SubstituteServiceProvider</buildArg>
+            <buildArg>--initialize-at-build-time=org.slf4j.helpers.SubstituteLoggerFactory</buildArg>
+            <buildArg>--initialize-at-build-time=org.slf4j.helpers.NOP_FallbackServiceProvider</buildArg>
+            <buildArg>--initialize-at-build-time=org.slf4j.helpers.NOPLoggerFactory</buildArg>
+            <buildArg>--initialize-at-build-time=io.netty.util.internal.logging.Slf4JLoggerFactory</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.model.processor.ChainedModelFilter$1</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.subst.NodeToStringTransformer$1</buildArg>
+            <buildArg>--initialize-at-build-time=ch.qos.logback.core.model.processor.DefaultProcessor$1</buildArg>            
           </buildArgs>
         </configuration>
       </plugin>
